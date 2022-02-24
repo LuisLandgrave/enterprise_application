@@ -1,12 +1,12 @@
 package com.mycompany.enterprise_application.jpa.entities;
 
 import java.io.Serializable;
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-//import javax.validation.constraints.NotNull;
 
 @Entity
 public class Person implements Serializable {
@@ -16,7 +16,7 @@ public class Person implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     //@NotNull(message = "ID cannot be null!")
-    private Long id;
+    private UUID id;
 
     @Column(nullable = false, length = 50)
     //@NotNull(message = "Name cannot be null!")
@@ -25,16 +25,16 @@ public class Person implements Serializable {
     public Person() {
         super();
     }
-    
+
     public Person(String name) {
         this.name = name;
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
