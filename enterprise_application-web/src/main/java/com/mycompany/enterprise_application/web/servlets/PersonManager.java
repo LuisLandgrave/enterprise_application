@@ -47,7 +47,7 @@ public class PersonManager extends HttpServlet {
             switch (operation) {
                 case "CREATE":
                     out.println("Creating person: " + request.getParameter("name"));
-                    UUID id = personEJB.register(request.getParameter("name"));
+                    UUID id = personEJB.create(request.getParameter("name"));
                     out.println("<br>");
                     out.println("ID=" + id);
                     break;

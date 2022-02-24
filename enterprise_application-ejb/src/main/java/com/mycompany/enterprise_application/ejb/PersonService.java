@@ -12,8 +12,12 @@ public class PersonService {
     @EJB
     private PersonRepository personRepository;
 
-    public UUID register(String name) {
+    public UUID create(String name) {
         return personRepository.create(name);
+    }
+
+    public Person read(UUID id) {
+        return personRepository.read(id);
     }
 
     public void update(UUID id, String name) {
